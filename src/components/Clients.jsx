@@ -31,16 +31,24 @@ const Clients = () => {
         What Our Clients Say
       </h2>
 
-      <div className="relative max-w-4xl mx-auto overflow-hidden">
-        {/* Left arrow */}
+      {/* Arrow buttons below the heading */}
+      <div className="flex justify-center gap-4 mb-8">
         <button
           onClick={() => scroll("left")}
-          className="absolute left-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md hover:bg-blue-100 p-3 rounded-full"
+          className="w-15 h-15 border border-gray-400 text-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition"
         >
-          ❮
+          <p className="mb-2 font-bold text-3xl">←</p>
         </button>
+        <button
+          onClick={() => scroll("right")}
+          className="w-15 h-15 border border-gray-400 text-white rounded-full flex items-center justify-center hover:bg-white hover:text-black transition"
+        >
+          <p className="mb-2 font-bold text-3xl">→</p>
+        </button>
+      </div>
 
-        {/* Scrollable container */}
+      {/* Scrollable testimonial cards */}
+      <div className="relative max-w-4xl mx-auto overflow-hidden">
         <div
           ref={scrollRef}
           className="flex overflow-x-scroll scroll-smooth snap-x snap-mandatory hide-scrollbar"
@@ -56,28 +64,18 @@ const Clients = () => {
               className="min-w-full snap-start px-6"
             >
               <div className="bg-[#161616] p-10 rounded-2xl shadow-md hover:shadow-xl transition duration-300">
-                <p className="text-2xl text-white italic text-gray-800 mb-6">
+                <p className="text-2xl text-white italic mb-6">
                   “{t.testimonial}”
                 </p>
                 <div className="mt-4">
-                  <div className="font-bold text-xl text-white font-bold">
-                    {t.name}
-                  </div>
+                  <div className="font-bold text-xl text-white">{t.name}</div>
                   <div className="text-md text-white">{t.position}</div>
-                  <div className="text-sm text-white mt-2">⭐ {t.rating}/5</div>
+                  <div className="text-sm text-white mt-2">⭐ {t.rating}</div>
                 </div>
               </div>
             </div>
           ))}
         </div>
-
-        {/* Right arrow */}
-        <button
-          onClick={() => scroll("right")}
-          className="absolute right-0 top-1/2 transform -translate-y-1/2 z-10 bg-white shadow-md hover:bg-blue-100 p-3 rounded-full"
-        >
-          ❯
-        </button>
       </div>
     </section>
   );

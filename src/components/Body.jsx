@@ -1,5 +1,4 @@
 import Clients from "./Clients";
-import Header from "./Header";
 import Hero from "./Hero";
 import Partners from "./Partners";
 import Services from "./Services";

@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 
+
 const Partners = () => {
   const [partners, setPartners] = useState([]);
 
